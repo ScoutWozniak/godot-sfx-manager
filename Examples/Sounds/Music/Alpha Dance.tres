@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SfxResource" format=3 uid="uid://co81t6jmsku8l"]
+
+[ext_resource type="AudioStream" uid="uid://ctytwv4xnus4a" path="res://Examples/Sounds/Music/Alpha Dance.ogg" id="1_8yeoi"]
+[ext_resource type="Script" uid="uid://bxujneo8rtayy" path="res://addons/kates-audio-manager/SFXResource.gd" id="2_5l4lw"]
+
+[resource]
+script = ExtResource("2_5l4lw")
+audioClip = ExtResource("1_8yeoi")
+defaultBus = "Music"
+looping = true

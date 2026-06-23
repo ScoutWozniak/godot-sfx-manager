@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bklvijgung2dk"]
+
+[ext_resource type="Script" uid="uid://cl237psrwcnfc" path="res://addons/kates-audio-manager/AudioManager.gd" id="1_xc8l5"]
+[ext_resource type="Script" uid="uid://bagwbcfshgi2y" path="res://addons/kates-audio-manager/AudioBus.gd" id="2_qs8of"]
+
+[node name="AudioManager" type="Node" unique_id=1300075568 node_paths=PackedStringArray("audio_bus_holder")]
+script = ExtResource("1_xc8l5")
+audio_bus_holder = NodePath("Buses")
+
+[node name="Buses" type="Node" parent="." unique_id=1556413010]
+
+[node name="SFX" type="Node" parent="Buses" unique_id=1569889239]
+script = ExtResource("2_qs8of")
+
+[node name="Music" type="Node" parent="Buses" unique_id=340665596]
+script = ExtResource("2_qs8of")

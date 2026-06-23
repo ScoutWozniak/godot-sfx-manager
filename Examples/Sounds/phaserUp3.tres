@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SfxResource" format=3 uid="uid://ca8ctql1cv4fl"]
+
+[ext_resource type="AudioStream" uid="uid://io2686y8biwa" path="res://Examples/Sounds/phaserUp3.wav" id="1_8wegr"]
+[ext_resource type="Script" uid="uid://bxujneo8rtayy" path="res://addons/kates-audio-manager/SFXResource.gd" id="2_1fxsm"]
+
+[resource]
+script = ExtResource("2_1fxsm")
+audioClip = ExtResource("1_8wegr")

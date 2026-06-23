@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SfxResource" format=3 uid="uid://c04xbtqsdi0um"]
+
+[ext_resource type="AudioStream" uid="uid://dkx7vjpojj5if" path="res://Examples/Sounds/laser1.wav" id="1_2fq4e"]
+[ext_resource type="Script" uid="uid://bxujneo8rtayy" path="res://addons/kates-audio-manager/SFXResource.gd" id="1_wm2dw"]
+
+[resource]
+script = ExtResource("1_wm2dw")
+audioClip = ExtResource("1_2fq4e")
+metadata/_custom_type_script = "uid://bxujneo8rtayy"

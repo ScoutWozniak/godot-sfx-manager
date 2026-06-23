@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://bsrd1osm1vnfx"]
+
+[ext_resource type="Script" uid="uid://5h6uf2j8e8ti" path="res://addons/kates-audio-manager/Nodes/sfx-point-3D.gd" id="1_o220b"]
+[ext_resource type="Resource" uid="uid://co81t6jmsku8l" path="res://Examples/Sounds/Music/Alpha Dance.tres" id="2_0owtf"]
+[ext_resource type="Script" uid="uid://e22jcu3xxhwx" path="res://addons/kates-audio-manager/Nodes/sfx-point.gd" id="4_0owtf"]
+[ext_resource type="Resource" uid="uid://ca8ctql1cv4fl" path="res://Examples/Sounds/phaserUp3.tres" id="5_04uwt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lfyb0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_sydoi"]
+sky_material = SubResource("ProceduralSkyMaterial_lfyb0")
+
+[sub_resource type="Environment" id="Environment_0owtf"]
+background_mode = 2
+sky = SubResource("Sky_sydoi")
+
+[sub_resource type="SphereMesh" id="SphereMesh_0owtf"]
+
+[sub_resource type="Animation" id="Animation_04uwt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0owtf"]
+resource_name = "movement"
+length = 6.41
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-5, -0.25, 0, 0.25, 0, 5, -0.12166667, -1.6666666, 0, 0, 2, -0.108333334, 0.5, 0, 0, -5, -0.18833333, 1.1666666, 0, 0, -5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.46, 2.76, 5.02, 6.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Music:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1, -0.12166667, 0.16666667, 0, 0, 2, -0.108333334, -0.5, 0, 0, -1, -0.18833333, 0.49999997, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.46, 2.76, 5.02, 6.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-2, -0.25, 0, 0.25, 0, 1, -0.12166667, -0.5, 0, 0, 9, -0.108333334, -1.3333334, 0, 0, 0, -0.18833333, 1.5, 0, 0, -2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.46, 2.76, 5.02, 6.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04uwt"]
+_data = {
+&"RESET": SubResource("Animation_04uwt"),
+&"movement": SubResource("Animation_0owtf")
+}
+
+[node name="Node3D" type="Node3D" unique_id=945599356]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1370072674]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=561870296]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1073416988]
+environment = SubResource("Environment_0owtf")
+
+[node name="Camera3D" type="Camera3D" parent="Environment" unique_id=1122208660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+current = true
+
+[node name="3D_Sounds" type="Node3D" parent="." unique_id=389022590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Music" type="Node3D" parent="3D_Sounds" unique_id=283487591]
+script = ExtResource("1_o220b")
+sfx = ExtResource("2_0owtf")
+metadata/_custom_type_script = "uid://5h6uf2j8e8ti"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="3D_Sounds/Music" unique_id=1144577268]
+mesh = SubResource("SphereMesh_0owtf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3D_Sounds" unique_id=1483627643]
+libraries/ = SubResource("AnimationLibrary_04uwt")
+autoplay = &"movement"
+
+[node name="UI_Sounds" type="CanvasLayer" parent="." unique_id=1782610519]
+
+[node name="Control" type="Control" parent="UI_Sounds" unique_id=1518374658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="HBoxContainer" parent="UI_Sounds/Control" unique_id=1750102190]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2777778
+anchor_top = 0.69135803
+anchor_right = 0.7222222
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UI_Sounds/Control/VBoxContainer" unique_id=136215266]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 2.0
+
+[node name="Button" type="Button" parent="UI_Sounds/Control/VBoxContainer/AspectRatioContainer" unique_id=472656476]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Press Me!"
+
+[node name="SoundEffectPoint" type="Node" parent="UI_Sounds/Control/VBoxContainer/AspectRatioContainer/Button" unique_id=323536824]
+script = ExtResource("4_0owtf")
+sfx = ExtResource("5_04uwt")
+play_on_start = false
+metadata/_custom_type_script = "uid://e22jcu3xxhwx"
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="UI_Sounds/Control/VBoxContainer" unique_id=1066030606]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 2.0
+
+[node name="Button" type="Button" parent="UI_Sounds/Control/VBoxContainer/AspectRatioContainer2" unique_id=1916212115]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Press Me!"
+
+[node name="SoundEffectPoint" type="Node" parent="UI_Sounds/Control/VBoxContainer/AspectRatioContainer2/Button" unique_id=1307064303]
+script = ExtResource("4_0owtf")
+sfx = ExtResource("5_04uwt")
+play_on_start = false
+metadata/_custom_type_script = "uid://e22jcu3xxhwx"
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="UI_Sounds/Control/VBoxContainer" unique_id=1581420453]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 2.0
+
+[node name="Button" type="Button" parent="UI_Sounds/Control/VBoxContainer/AspectRatioContainer3" unique_id=2113576812]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Press Me!"
+
+[node name="SoundEffectPoint" type="Node" parent="UI_Sounds/Control/VBoxContainer/AspectRatioContainer3/Button" unique_id=158841030]
+script = ExtResource("4_0owtf")
+sfx = ExtResource("5_04uwt")
+play_on_start = false
+metadata/_custom_type_script = "uid://e22jcu3xxhwx"
+
+[connection signal="pressed" from="UI_Sounds/Control/VBoxContainer/AspectRatioContainer/Button" to="UI_Sounds/Control/VBoxContainer/AspectRatioContainer/Button/SoundEffectPoint" method="play"]
+[connection signal="pressed" from="UI_Sounds/Control/VBoxContainer/AspectRatioContainer2/Button" to="UI_Sounds/Control/VBoxContainer/AspectRatioContainer2/Button/SoundEffectPoint" method="play"]
+[connection signal="pressed" from="UI_Sounds/Control/VBoxContainer/AspectRatioContainer3/Button" to="UI_Sounds/Control/VBoxContainer/AspectRatioContainer3/Button/SoundEffectPoint" method="play"]
