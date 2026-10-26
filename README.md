@@ -5,4 +5,4 @@ An addon to help with SFX + Music playing for Godot.  Automatically handles sett
 
 ### TO-DO
 - Add ability to extend SFX resources to change behavior of sounds on play
-- Add effects to the sound resource / helper functions to apply buses
+- Add effects to the sound resource / helper functions to apply effects to buses
